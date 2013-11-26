@@ -1,0 +1,18 @@
+[user]
+    name = "Noah Hall"
+    email = "noah.t.hall@gmail.com"
+[color]
+    ui = auto
+    interactive = auto
+    status = true
+[alias]
+    stat = status
+    st = status
+    ci = commit
+    co = checkout
+    graph = log --pretty=format:'%h %s' --graph
+    bdates = for-each-ref --sort=-committerdate --format='%(objectname:short) \t %(committerdate:short) \t %(refname:short) \t %(subject)' refs/heads/
+[core]
+	excludesfile = ~/.gitignore_global
+  editor = vim
+  pager = less -r

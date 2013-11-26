@@ -1,0 +1,21 @@
+#gitignore files
+.gitignore
+
+#files currently being vim'd
+*.swp
+
+#python bytecode
+*.pyc
+
+#compresssed packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+#random
+*.bak
