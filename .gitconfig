@@ -11,8 +11,13 @@
     ci = commit
     co = checkout
     graph = log --pretty=format:'%h %s' --graph
+    bgraph = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     bdates = for-each-ref --sort=-committerdate --format='%(objectname:short) \t %(committerdate:short) \t %(refname:short) \t %(subject)' refs/heads/
+    today = log --stat --since="6am"
 [core]
-	excludesfile = ~/.gitignore_global
-  editor = vim
-  pager = less -r
+    excludesfile = ~/.gitignore_global
+    editor = vim
+    pager = less -r
+    autocrlf = input
+[push]
+    default = simple
