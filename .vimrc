@@ -1,4 +1,5 @@
-execute pathogen#infect()
+set statusline +=%f\ %h%m%r\ -\ buf#:\ %n\ %=line:\ %l/%L\ -\ col:\ %c%V\ \ 
+call pathogen#infect()
 set autoindent
 set smartindent
 set tabstop=2
@@ -12,11 +13,11 @@ set ignorecase
 set smartcase
 set splitbelow
 set splitright
-" set statusline += %{SyntasticStatuslineFlag()}  "syntastic status line stuff
 au InsertEnter * set nohlsearch 
 au InsertLeave * set hlsearch 
-au BufRead,BufNewFile *.less set filetype=css 
+" au BufRead,BufNewFile *.less set filetype=css "only if no less highlighting :P
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+set laststatus=2
