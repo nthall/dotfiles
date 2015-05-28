@@ -1,12 +1,15 @@
-set statusline +=%f\ %h%m%r\ -\ buf#:\ %n\ %=line:\ %l/%L\ -\ col:\ %c%V\ \ 
+set statusline +=%f\ %h%m%r\ -\ buf#:\ %n\ %=%{fugitive#statusline()}\ \ line:\ %l/%L\ -\ col:\ %c%V\ \
 call pathogen#infect()
+set binary
 set autoindent
 set smartindent
-set tabstop=2
+set tabstop=4
 set et
-set shiftwidth=2
+set shiftwidth=4
+set backspace=2
 set ruler
 syntax on
+filetype plugin on
 set hlsearch
 set incsearch
 set ignorecase
@@ -21,3 +24,5 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 set laststatus=2
+set t_Co=256
+source ~/.regexlist.vim
