@@ -1,5 +1,5 @@
 #gitignore files
-.gitignore
+#.gitignore
 
 #files currently being vim'd
 *.swp
@@ -19,3 +19,6 @@
 
 #random
 *.bak
+
+# ughghh
+.DS_Store
