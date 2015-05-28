@@ -10,10 +10,12 @@
     st = status
     ci = commit
     co = checkout
+    diff = diff --color-words
     graph = log --pretty=format:'%h %s' --graph
     bgraph = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     bdates = for-each-ref --sort=-committerdate --format='%(objectname:short) \t %(committerdate:short) \t %(refname:short) \t %(subject)' refs/heads/
     today = log --stat --since="6am"
+    oldest-ancestor = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
@@ -21,3 +23,5 @@
     autocrlf = input
 [push]
     default = simple
+[merge "ours"]
+  driver = true
