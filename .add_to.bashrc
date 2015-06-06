@@ -1,3 +1,5 @@
+
+# handy snippets from dotfiles/.add_to.bashrc
 source ~/.git-completion
 alias vim='vim -w ~/.vimlog'
 alias vsplit='vim -O'

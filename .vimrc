@@ -1,5 +1,5 @@
 set statusline +=%f\ %h%m%r\ -\ buf#:\ %n\ %=%{fugitive#statusline()}\ \ line:\ %l/%L\ -\ col:\ %c%V\ \
-call pathogen#infect()
+execute pathogen#infect()
 set binary
 set autoindent
 set smartindent
