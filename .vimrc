@@ -8,6 +8,7 @@ set et
 set shiftwidth=4
 set backspace=2
 set ruler
+set wildmenu
 syntax on
 filetype plugin on
 set hlsearch

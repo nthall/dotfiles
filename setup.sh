@@ -1,8 +1,11 @@
 #!/bin/bash
 
+DEST=$(whoami)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 links=(
     .vimrc 
-    .vim 
+    .vim
     .regexlist.vim 
     .tmux.conf 
     .gitconfig 
@@ -10,22 +13,23 @@ links=(
     .git-completion
 )
 for i in ${links[@]}; do
-    ln -s ${i} ~/${i}
+    ln -s ${DIR}/${i} /home/${DEST}/${i}
 done
 
 clones=(
     scrooloose/syntastic
     tpope/vim-fugitive
 )
-cd ~/.vim/bundle
+mkdir -p /home/${DEST}/.vim/bundle
+cd /home/${DEST}/.vim/bundle
 for i in ${clones[@]}; do
     git clone http://github.com/${i}
 done
 
-cd ~
+cd /home/${DEST}
 appends=(.add_to.bashrc)
 for i in ${appends[@]}; do
-    fname=`cut -d \. -f 3`
+    fname=`cut -d \. -f 2`
     cat ${i} >> ${fname}
 done
 
