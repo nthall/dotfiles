@@ -27,3 +27,8 @@ noremap <Right> <NOP>
 set laststatus=2
 set t_Co=256
 source ~/.regexlist.vim
+
+" pylint chokes a bit on django :(
+let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
+" always populate error list for :lnext, :lprev
+let g:syntastic_always_populate_loc_list = 1
