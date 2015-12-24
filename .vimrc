@@ -50,3 +50,6 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" better vimdiff highlighting
+colorscheme mycolorscheme
