@@ -19,6 +19,7 @@ done
 clones=(
     scrooloose/syntastic
     tpope/vim-fugitive
+    airblade/vim-gitgutter
 )
 mkdir -p /home/${DEST}/.vim/bundle
 cd /home/${DEST}/.vim/bundle
