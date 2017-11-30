@@ -20,6 +20,8 @@ clones=(
     scrooloose/syntastic
     tpope/vim-fugitive
     airblade/vim-gitgutter
+    pangloss/vim-javascript
+    mxw/vim-jsx
 )
 mkdir -p /home/${DEST}/.vim/bundle
 cd /home/${DEST}/.vim/bundle
