@@ -24,4 +24,6 @@
 [push]
     default = simple
 [merge "ours"]
-  driver = true
+    driver = true
+[credential]
+	helper = store
