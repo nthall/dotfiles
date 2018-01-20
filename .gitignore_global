@@ -22,3 +22,8 @@
 
 # ughghh
 .DS_Store
+
+.venv
+pid
+
+wsgi.py

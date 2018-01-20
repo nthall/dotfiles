@@ -15,6 +15,10 @@ set backspace=2
 syntax on
 filetype plugin on
 
+" line numbers
+set number
+set relativenumber
+
 " search settings
 set hlsearch
 set incsearch
@@ -26,8 +30,6 @@ au InsertLeave * set hlsearch
 "split location defaults
 set splitbelow
 set splitright
-
-" au BufRead,BufNewFile *.less set filetype=css "only if no less highlighting :P
 
 " enforce hjkl movement
 noremap <Up> <NOP>
@@ -43,9 +45,13 @@ set ruler
 set wildmenu
 
 au Filetype html setlocal tabstop=2 shiftwidth=2
+" au BufRead,BufNewFile *.less set filetype=css "only if no less highlighting :P
+au BufRead,BufNewFile *.swig set filetype=htmldjango
+
 " django/mybox specific
 au Filetype htmldjango setlocal tabstop=2 shiftwidth=2
 au Filetype css setlocal tabstop=2 shiftwidth=2
+au Filetype scss setlocal tabstop=2 shiftwidth=2
 au Filetype javascript setlocal tabstop=2 shiftwidth=2
 
 " pylint chokes a bit on django :(
@@ -53,6 +59,10 @@ let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
 " always populate error list for :lnext, :lprev
 let g:syntastic_always_populate_loc_list = 1
 
+" correctly highlight JSX in .js files
+let g:jsx_ext_required = 0
+
+" use eslint, not jshint
 let g:syntastic_javascript_checkers = ['eslint']
 
 " Tell vim to remember certain things when we exit
@@ -79,3 +89,9 @@ augroup END
 
 " better vimdiff highlighting
 " colorscheme mycolorscheme
+
+" deploy shortcut
+command DW w | AsyncRun deploy water
+
+nnoremap ; :
+vnoremap ; :
