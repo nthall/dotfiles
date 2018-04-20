@@ -22,6 +22,9 @@ clones=(
     airblade/vim-gitgutter
     pangloss/vim-javascript
     mxw/vim-jsx
+    altercation/vim-colors-solarized.git
+    skywind3000/asyncrun
+    w0rp/ale
 )
 mkdir -p /home/${DEST}/.vim/bundle
 cd /home/${DEST}/.vim/bundle

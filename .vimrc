@@ -44,6 +44,7 @@ source ~/.regexlist.vim
 set ruler
 set wildmenu
 
+au Filetype html setlocal tabstop=2 shiftwidth=2
 " au BufRead,BufNewFile *.less set filetype=css "only if no less highlighting :P
 au BufRead,BufNewFile *.swig set filetype=htmldjango
 
@@ -54,15 +55,20 @@ au Filetype scss setlocal tabstop=2 shiftwidth=2
 au Filetype javascript setlocal tabstop=2 shiftwidth=2
 
 " pylint chokes a bit on django :(
-let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
+" let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
+
 " always populate error list for :lnext, :lprev
-let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_always_populate_loc_list = 1
 
 " correctly highlight JSX in .js files
 let g:jsx_ext_required = 0
 
 " use eslint, not jshint
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 " Tell vim to remember certain things when we exit
 "  '20  :  marks will be remembered for up to 20 previously edited files
@@ -86,8 +92,8 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" better vimdiff highlighting
-colorscheme mycolorscheme
+set background=light
+colorscheme solarized
 
 " deploy shortcut
 command DW w | AsyncRun deploy water

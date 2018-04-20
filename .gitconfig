@@ -24,6 +24,11 @@
 [push]
     default = simple
 [merge "ours"]
+  driver = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
     driver = true
 [credential]
 	helper = store
