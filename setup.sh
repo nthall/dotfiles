@@ -20,6 +20,9 @@ clones=(
     scrooloose/syntastic
     tpope/vim-fugitive
     airblade/vim-gitgutter
+    altercation/vim-colors-solarized.git
+    skywind3000/asyncrun
+    w0rp/ale
 )
 mkdir -p /home/${DEST}/.vim/bundle
 cd /home/${DEST}/.vim/bundle

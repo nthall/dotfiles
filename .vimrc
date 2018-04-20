@@ -87,8 +87,8 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" better vimdiff highlighting
-" colorscheme mycolorscheme
+set background=light
+colorscheme solarized
 
 " deploy shortcut
 command DW w | AsyncRun deploy water
