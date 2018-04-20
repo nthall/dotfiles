@@ -56,7 +56,7 @@ au Filetype javascript setlocal tabstop=2 shiftwidth=2
 
 " pylint chokes a bit on django :(
 " let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
-let g:ale_python_pylint_options = '--load-plugins pylint_django'
+"let g:ale_python_pylint_options = '--load-plugins pylint_django'
 
 " always populate error list for :lnext, :lprev
 " let g:syntastic_always_populate_loc_list = 1
@@ -68,6 +68,7 @@ let g:jsx_ext_required = 0
 " let g:syntastic_javascript_checkers = ['eslint']
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'python': ['flake8'],
 \}
 
 " Tell vim to remember certain things when we exit
