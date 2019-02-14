@@ -93,6 +93,8 @@ augroup resCur
 augroup END
 
 set background=light
+let g:solarized_termcolors=256
+set t_Co=256
 colorscheme solarized
 
 " deploy shortcut
