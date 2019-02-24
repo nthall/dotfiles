@@ -104,3 +104,6 @@ vnoremap ; :
 
 " aurora/vesper specific - notebook md template
 au BufNewFile /home/noah/projects/notebook/**.md r /home/noah/.vim/templates/notes.md
+
+" vimwiki settings
+let g:vimwiki_list = [{'path':'~/wiki/','path_html':'~/wiki_export/','syntax':'markdown'}]
