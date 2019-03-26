@@ -68,6 +68,7 @@ let g:jsx_ext_required = 0
 " let g:syntastic_javascript_checkers = ['eslint']
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'python': ['flake8'],
 \}
 
 " Tell vim to remember certain things when we exit
@@ -102,3 +103,9 @@ command DW w | AsyncRun deploy water
 
 nnoremap ; :
 vnoremap ; :
+
+" aurora/vesper specific - notebook md template
+au BufNewFile /home/noah/projects/notebook/**.md r /home/noah/.vim/templates/notes.md
+
+" vimwiki settings
+let g:vimwiki_list = [{'path':'~/wiki/','path_html':'~/wiki_export/','syntax':'markdown'}]
