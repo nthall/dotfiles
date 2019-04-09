@@ -106,4 +106,6 @@ vnoremap ; :
 au BufNewFile /home/noah/projects/notebook/**.md r /home/noah/.vim/templates/notes.md
 
 " vimwiki settings
+au Filetype vimwiki setlocal tabstop=2 shiftwidth=2 background=dark
+au Filetype vimwiki colorscheme gruvbox
 let g:vimwiki_list = [{'path':'~/wiki/','path_html':'~/wiki_export/','syntax':'markdown'}]
