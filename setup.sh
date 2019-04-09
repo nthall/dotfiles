@@ -23,7 +23,7 @@ clones=(
     pangloss/vim-javascript
     mxw/vim-jsx
     altercation/vim-colors-solarized.git
-    skywind3000/asyncrun
+    skywind3000/asyncrun.vim
     w0rp/ale
     vimwiki/vimwiki
 )
