@@ -2,6 +2,7 @@
 set statusline =%f\ %h%m%r\ -\ buf#:\ %n\ %=%{fugitive#statusline()}\ \ line:\ %l/%L\ -\ col:\ %c%V\ \
 execute pathogen#infect()
 set binary  " tbh don't remember why
+set noeol
 
 " indentation
 set autoindent
@@ -56,7 +57,7 @@ au Filetype javascript setlocal tabstop=2 shiftwidth=2
 
 " pylint chokes a bit on django :(
 " let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
-"let g:ale_python_pylint_options = '--load-plugins pylint_django'
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
 
 " always populate error list for :lnext, :lprev
 " let g:syntastic_always_populate_loc_list = 1
@@ -70,6 +71,9 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'python': ['flake8'],
 \}
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Tell vim to remember certain things when we exit
 "  '20  :  marks will be remembered for up to 20 previously edited files
@@ -98,6 +102,9 @@ colorscheme solarized
 
 " deploy shortcut
 command DW w | AsyncRun deploy water
+command! -nargs=+ Rg AsyncRun rg --vimgrep <args>
 
 nnoremap ; :
 vnoremap ; :
+
+set rtp+=~/.fzf
