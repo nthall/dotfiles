@@ -56,7 +56,8 @@ au Filetype javascript setlocal tabstop=2 shiftwidth=2
 
 " pylint chokes a bit on django :(
 " let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
-let g:ale_python_pylint_options = '--load-plugins pylint_django'
+let g:ale_python_executable = 'python3'
+let g:ale_python_pylint_options = '--rcfile ~/.pylintrc --load-plugins pylint_django '
 
 " always populate error list for :lnext, :lprev
 " let g:syntastic_always_populate_loc_list = 1
@@ -108,4 +109,10 @@ au BufNewFile /home/noah/projects/notebook/**.md r /home/noah/.vim/templates/not
 " vimwiki settings
 au Filetype vimwiki setlocal tabstop=2 shiftwidth=2 background=dark
 au Filetype vimwiki colorscheme gruvbox
-let g:vimwiki_list = [{'path':'~/wiki/','path_html':'~/wiki_export/','syntax':'markdown'}]
+let g:vimwiki_list = [{'path':'~/wiki/','path_html':'~/wiki_export/','syntax':'markdown', 'nested_syntaxes': {'python': 'python', 'bash': 'sh'}}]
+let g:vimwiki_autowriteall = 1
+
+
+" search in wiki
+command! -nargs=+ WS AsyncRun rg --vimgrep <args> ~/wiki
+command! -nargs=+ Rg AsyncRun rg --vimgrep <args>
