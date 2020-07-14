@@ -33,11 +33,9 @@ for i in ${clones[@]}; do
     git clone http://github.com/${i}
 done
 
-cd /home/${DEST}
-appends=(.add_to.bashrc)
+appends=(.bashrc)
 for i in ${appends[@]}; do
-    fname=`cut -d \. -f 2`
-    cat ${i} >> ${fname}
+    cat ${i} >> /home/${DEST}/${}
 done
 
 exit 0
