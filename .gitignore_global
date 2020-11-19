@@ -3,6 +3,7 @@
 
 #files currently being vim'd
 *.swp
+*.swo
 
 #python bytecode
 *.pyc
@@ -27,3 +28,7 @@
 pid
 
 wsgi.py
+
+.pylintrc
+
+local_settings.py
