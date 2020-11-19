@@ -58,6 +58,8 @@ au Filetype javascript setlocal tabstop=2 shiftwidth=2
 " let g:syntastic_python_pylint_args = "--load-plugins django_pylint"
 let g:ale_python_executable = 'python3'
 let g:ale_python_pylint_options = '--rcfile ~/.pylintrc --load-plugins pylint_django '
+au BufRead,BufNewFile /home/noah/projects/libreorganize/* let g:ale_python_pylint_options = '--rcfile /home/noah/projects/libreorganize/.pylintrc --load-plugins pylint_django'
+
 
 " always populate error list for :lnext, :lprev
 " let g:syntastic_always_populate_loc_list = 1
@@ -103,13 +105,19 @@ command DW w | AsyncRun deploy water
 nnoremap ; :
 vnoremap ; :
 
+imap <silent> <C-t> <C-.>
+imap <silent> <C-d> <C-,>
+
 " aurora/vesper specific - notebook md template
 au BufNewFile /home/noah/projects/notebook/**.md r /home/noah/.vim/templates/notes.md
+
+" personal-site templates
+au BufNewFile /home/noah/projects/personal-site/posts/**.md 0r /home/noah/.vim/templates/post.md
 
 " vimwiki settings
 au Filetype vimwiki setlocal tabstop=2 shiftwidth=2 background=dark
 au Filetype vimwiki colorscheme gruvbox
-let g:vimwiki_list = [{'path':'~/wiki/','path_html':'~/wiki_export/','syntax':'markdown', 'nested_syntaxes': {'python': 'python', 'bash': 'sh'}}]
+let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_export/', 'syntax': 'markdown', 'nested_syntaxes': {'python': 'python', 'bash': 'sh', 'html': 'html', 'sql': 'sql', 'js': 'javascript'}}]
 let g:vimwiki_autowriteall = 1
 
 
